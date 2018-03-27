@@ -31,6 +31,10 @@ provide(bemDom.declBlock(this.name, Control, /** @lends attach.prototype */{
         return this._clear(data);
     },
 
+    /**
+     * Returns file element
+     * @returns {attach__file}
+     */
     getFileElem : function() {
         return this.findChildElem('file');
     },
