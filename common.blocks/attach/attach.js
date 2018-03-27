@@ -31,6 +31,10 @@ provide(bemDom.declBlock(this.name, Control, /** @lends attach.prototype */{
         return this._clear(data);
     },
 
+    getFileElem : function() {
+        return this.findChildElem('file');
+    },
+
     _clear : function(data) {
         var control = this._elem('control').domElem,
             name = control.attr('name'),
@@ -45,7 +49,7 @@ provide(bemDom.declBlock(this.name, Control, /** @lends attach.prototype */{
                 (tabIndex? ' tabindex="' + tabIndex + '"' : '') +
             '/>');
 
-        bemDom.destruct(this.findChildElem('file').domElem);
+        bemDom.destruct(this.getFileElem().domElem);
 
         this.domElem.append(this._elem('no-file').domElem); // use append because only detached before
 
@@ -73,7 +77,7 @@ provide(bemDom.declBlock(this.name, Control, /** @lends attach.prototype */{
     _updateFileElem : function() {
         var fileName = extractFileNameFromPath(this.getVal());
 
-        this.findChildElem('file') && bemDom.destruct(this._elem('file').domElem);
+        this.getFileElem() && bemDom.destruct(this._elem('file').domElem);
 
         bemDom.append(
             this.domElem,
