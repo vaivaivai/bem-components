@@ -23,7 +23,7 @@
     "!LICENSE.txt"
   ],
   "dependencies": {
-    "bem-core": "4.2.1"
+    "bem-core": "https://github.com/bem/bem-core.git#remove-isIOS-pointer-event"
   },
   "devDependencies": {
     "bem-pr": "~0.13.0"
